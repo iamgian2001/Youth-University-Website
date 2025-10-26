@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  /* Font Families */
+  --font-heading: "Lora", sans-serif;
+  --font-body: "Nunito Sans", sans-serif;
+  --font-cta: "Montserrat", sans-serif;
+
+  /* Colors */
+  --color-primary: #00274d;
+  --color-secondary: #ffc72c;
+  --color-accent: #e74c3c;
+  --color-bg: #f8f9fa;
+  --color-text-default: #212529;
+  --color-text-light: #faf7ee;
+  --color-text-secondary: #00274d;
+  --color-text-muted: #6c757d;
+  --color-text-highlight: #ffc72c;
+  --color-neutral: #e5e5e5;
+
+  /* Background Images */
+  --background-image-gradient: linear-gradient(135deg, #f8f9fa, #bcbcbc);
+
+  /* Screens */
+
+  --screen-5k: 5000px;
+}
+
+.section-title {
+  @apply font-heading text-text-secondary text-[1.8rem] md:text-[2.2rem]
+          lg:text-[2.6rem] 2xl:text-[3rem] tracking-[0.25vw] font-bold;
+}
+
+.menu-buttons button {
+  @apply w-full h-10 font-cta font-semibold border-b-4 transition-all duration-200;
+}
+
+.custom-navbar {
+  @apply flex font-cta flex-row font-semibold text-[1rem] lg:text-[1.2rem]
+          items-center text-text-default px-1 border-b-2 border-neutral space-x-5;
+}
+
+.floating-div {
+  @apply bg-white/80 drop-shadow-[0_5px_5px_rgba(113,113,113,0.40)]
+          absolute flex flex-col items-center justify-center text-center
+          w-fit px-3 h-fit py-1 rounded-2xl z-20;
+}
+
+.main-title {
+  @apply font-heading text-[1.6rem] md:text-[2rem] lg:text-[2.3rem]
+          2xl:text-[2.7rem] tracking-[0.25vw] font-bold;
+}
+
+.sub-title {
+  @apply font-heading text-[1.3rem] md:text-[1.6rem] lg:text-[1.9rem]
+          2xl:text-[2.2rem] tracking-[0.25vw] font-semibold;
+}
+
+.mini-title {
+  @apply font-body text-[1.1rem] md:text-[1.3rem] lg:text-[1.5rem]
+          2xl:text-[1.7rem] tracking-[0.25vw] font-semibold;
+}
+
+.body {
+  @apply font-body text-[0.9rem] md:text-[1.1rem] lg:text-[1.25rem]
+          2xl:text-[1.4rem];
+}
+
+.button-text {
+  @apply font-cta text-[0.9rem] md:text-[1.1rem] lg:text-[1.25rem]
+          2xl:text-[1.5rem] font-semibold;
+}
+
+.small-text {
+  @apply font-body text-[0.7rem] md:text-[1rem] lg:text-[1.2rem]
+          2xl:text-[1.1rem];
+}

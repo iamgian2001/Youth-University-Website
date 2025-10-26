@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <script type="text/javascript" defer>
+      const handler = {
+        get(target, name) {
+          // If the toy (property) exists, give it to me; if not, give me 42
+          return name in target ? target[name] : 42;
+        },
+      };
+      const toyBox = new Proxy({}, handler);
+      toyBox.ball = "red";
+      console.log(toyBox.ball); // Outputs: red
+      console.log(toyBox.car); // Outputs: 42
+    </script>
+  </body>
+</html>
