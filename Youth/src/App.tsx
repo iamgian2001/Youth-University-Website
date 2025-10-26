@@ -9,7 +9,6 @@ function App() {
   return (
     <Router>
       <Header />
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} /> {/* http://yoursite.com/ */}
         <Route path="/login" element={<Login />} />
