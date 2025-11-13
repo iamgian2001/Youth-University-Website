@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5749f76b-753e-462d-a9ac-e8b9fcce38fc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/Youth-University-Website.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/controllers/LandingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/entities/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Youth/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Youth/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Youth/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Youth/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Youth/src/components/CourseCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Youth/src/components/CourseCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Youth/src/components/NewsCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Youth/src/components/NewsCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Youth/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Youth/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Youth/src/pages/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Youth/src/pages/Login.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c8020d7-f6a7-4fce-b9d5-bb19cd416f56.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5c8020d7-f6a7-4fce-b9d5-bb19cd416f56.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c8020d7-f6a7-4fce-b9d5-bb19cd416f56/storage_v2/_src_/database/NC-LMS.2sLfiA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5c8020d7-f6a7-4fce-b9d5-bb19cd416f56/storage_v2/_src_/database/NC-LMS.2sLfiA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NC_LMS/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/NC_LMS/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/entities/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/entities/Student.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,32 +48,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.NcLmsApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/94775/Documents/GitHub/Youth-University-Website/Backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.NcLmsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/94775/Documents/GitHub/Youth-University-Website/Backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\94775\Documents\GitHub\Youth-University-Website\Backend\NC_LMS\src\main\java\com" />
@@ -167,7 +163,8 @@
       <workItem from="1762950473005" duration="302000" />
       <workItem from="1763025519157" duration="2027000" />
       <workItem from="1763027559353" duration="36000" />
-      <workItem from="1763027605176" duration="2524000" />
+      <workItem from="1763027605176" duration="3713000" />
+      <workItem from="1763042855744" duration="3253000" />
     </task>
     <servers />
   </component>

@@ -1,46 +1,21 @@
 package com.nc.nc_lms.entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import java.util.Date;
+import javax.naming.Name;
 
+@EqualsAndHashCode(callSuper = true)
+@Data
 @Entity
-@Table(name = "student")
-public class Student {
-    @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column(name="id",nullable=false,updatable=false)
-    private int id;
+@Table(name = "Student")
+public class Student extends User{
+    @Column(name = "degreetype")
+    private String degreeType;
 
-    @Column(name="nic", nullable=false,updatable=true)
-    private int nic;
-
-    @Column(name="fname", nullable=false)
-    private String firstName;
-
-    @Column(name="lname", nullable=false)
-    private String lastName;
-
-    @Column(name = "email",nullable=false)
-    private String email;
-
-    @Column(name = "phone",nullable=false)
-    private int phoneNumber;
-
-    @Column(name = "address")
-    private String address;
-
-    @Column(name="city")
-    private String city;
-
-    @Column(name="dob", nullable=false)
-    private Date dob;
-
-    @Column(name="gender")
-    private String gender;
-
-    @Column(name = "program", nullable=false)
+    @Column(name = "program")
     private String program;
 }
-
-
