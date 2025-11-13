@@ -1,6 +1,5 @@
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-// Define the props interface
 interface NewsCardProps {
   imageUrl: string;
   tags: string[];
@@ -8,7 +7,6 @@ interface NewsCardProps {
   description: string;
 }
 
-// Use React.FC for function components (optional but common)
 const NewsCard = ({ imageUrl, tags, title, description }: NewsCardProps) => {
   return (
     <div className="w-full min-md:w-11/12 bg-bg flex flex-col rounded-lg shadow-lg">
