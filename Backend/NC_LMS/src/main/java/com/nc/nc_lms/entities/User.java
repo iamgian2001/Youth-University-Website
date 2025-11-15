@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -36,9 +37,14 @@ public class User {
     @Column(name = "email", nullable = false)
     private String email;
 
+    @NotBlank(message = "Password is required")
+    @NotNull
+    @Column(name = "password", length = 72)
+    private String passwordHash;
+
     @NotBlank(message = "Phone number is required!")
     @Column(name = "phone", nullable = false)
-    private int phoneNumber;
+    private String phoneNumber;
 
     @Column(name = "address")
     private String address;
@@ -48,7 +54,7 @@ public class User {
 
     @NotBlank(message = "Date of Birth is required!")
     @Column(name = "dob", nullable = false)
-    private Date dob;
+    private LocalDate dob;
 
     @Column(name = "gender")
     private String gender;

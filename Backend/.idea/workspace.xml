@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5749f76b-753e-462d-a9ac-e8b9fcce38fc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/controllers/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/entities/Adminstrator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/entities/Announcement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/entities/Lecturer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c8020d7-f6a7-4fce-b9d5-bb19cd416f56.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5c8020d7-f6a7-4fce-b9d5-bb19cd416f56.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c8020d7-f6a7-4fce-b9d5-bb19cd416f56/storage_v2/_src_/database/NC-LMS.2sLfiA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5c8020d7-f6a7-4fce-b9d5-bb19cd416f56/storage_v2/_src_/database/NC-LMS.2sLfiA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NC_LMS/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/NC_LMS/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/NcLmsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/NcLmsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/controllers/LandingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/controllers/LandingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/entities/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/entities/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/entities/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +170,10 @@
       <workItem from="1763025519157" duration="2027000" />
       <workItem from="1763027559353" duration="36000" />
       <workItem from="1763027605176" duration="3713000" />
-      <workItem from="1763042855744" duration="3253000" />
+      <workItem from="1763042855744" duration="3962000" />
+      <workItem from="1763100060362" duration="75000" />
+      <workItem from="1763100723821" duration="3819000" />
+      <workItem from="1763123387698" duration="2943000" />
     </task>
     <servers />
   </component>
