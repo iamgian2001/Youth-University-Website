@@ -1,43 +1,53 @@
-import Logo from "../assets/logo.svg?react";
-import { IoIosArrowDown } from "react-icons/io";
-import MobileNavbar from "./MobileNavbar.js";
+import {
+  House,
+  Book,
+  LibraryBig,
+  MailQuestionMark,
+  UserCog,
+} from "lucide-react";
 
-function Navbar() {
+import { Link } from "react-router";
+import React from "react";
+
+type NavItem = {
+  name: string;
+  icon: React.ElementType;
+  path: string;
+};
+
+const navItemList: NavItem[] = [
+  { name: "Home", icon: House, path: "/dashboard" },
+  { name: "My courses", icon: Book, path: "/courses" },
+  { name: "Resources", icon: LibraryBig, path: "/resources" },
+  { name: "Student Support", icon: MailQuestionMark, path: "/studentsupport" },
+];
+
+export default function Navbar({ width }: { width: string }) {
+  const size = 18;
+  const strokeWidth = 1.25;
+
   return (
-    <>
-      <div className="hidden md:flex flex-row px-4 py-3 text-text-default justify-between items-center">
-        <div className="flex flex-row space-x-4">
-          <Logo />
-        </div>
-        <div className="flex flex-row items-center space-x-7 justify-center mr-10 body">
-          <div className="custom-navbar">
-            <button>Item</button>
-            <IoIosArrowDown className="w-12 h-7" />
-          </div>
-          <div className="custom-navbar">
-            <button>Item</button>
-            <IoIosArrowDown className="w-12 h-7" />
-          </div>
-          <div className="custom-navbar">
-            <button>Item</button>
-            <IoIosArrowDown className="w-12 h-7" />
-          </div>
-          <div className="custom-navbar">
-            <button>Item</button>
-            <IoIosArrowDown className="w-12 h-7" />
-          </div>
-          <div className="custom-navbar">
-            <button>Item</button>
-            <IoIosArrowDown className="w-12 h-7" />
-          </div>
+    <ul className={`nav-list flex flex-col ${width} h-full items-start`}>
+      <div className="w-full flex flex-col space-y-2.5">
+        {navItemList.map((item, index) => {
+          const Icon = item.icon;
+          return (
+            <div key={index} className="flex flex-row items-center space-x-1.5">
+              <Link to={item.path}>
+                <Icon size={size} strokeWidth={strokeWidth} />
+                <li>{item.name}</li>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="w-full">
+        <div className="flex flex-row items-center space-x-1.5 hover:text-slate-100">
+          <UserCog size={size} strokeWidth={strokeWidth} />
+          <li>Profile & Settings</li>
         </div>
       </div>
-      {/* Mobile Navbar: only visible below md */}
-      <div className="md:hidden">
-        <MobileNavbar />
-      </div>
-    </>
+    </ul>
   );
 }
-
-export default Navbar;
