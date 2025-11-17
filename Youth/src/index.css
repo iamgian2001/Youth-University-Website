@@ -30,13 +30,13 @@
   --screen-5k: 5000px;
 }
 
+.bg-mountains {
+  @apply bg-cover text-text-light bg-[url(flat-mountains.svg)];
+}
+
 .section-title {
   @apply font-heading text-text-secondary text-[1.8rem] md:text-[2.2rem]
           lg:text-[2.6rem] 2xl:text-[3rem] tracking-[0.25vw] font-bold;
-}
-
-.menu-buttons button {
-  @apply w-full h-10 font-cta font-semibold border-b-4 transition-all duration-200;
 }
 
 .custom-navbar {

@@ -1,40 +1,34 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router";
-import Home from "./pages/Home.js";
-import Login from "./pages/Login.js";
-import Header from "./layout/Header.js";
-import Footer from "./layout/Footer.js";
-import Dashboard from "./pages/Dashboard.js";
-import Navbar from "./layout/Navbar.js";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
 
-function App() {
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import Courses from "./pages/Courses";
+
+import MainLayout from "./layout/MainLayout";
+import DashboardLayout from "./layout/DashboardLayout";
+
+export default function App() {
   return (
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Header />
-              <Home />
-              <Footer />
-            </>
-          }
-        />{" "}
-        {/* http://yoursite.com/ */}
+        {/* Public layout */}
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+        </Route>
+
+        {/* Dashboard layout */}
+        <Route element={<DashboardLayout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/courses" element={<Courses />} />
+        </Route>
+
+        {/* Standalone routes */}
         <Route path="/login" element={<Login />} />
+
+        {/* 404 */}
         <Route path="*" element={<div>404 Not Found</div>} />
-        <Route
-          path="/dashboard"
-          element={
-            <>
-              <Navbar width="w-2/12" />
-              <Dashboard />
-            </>
-          }
-        />
       </Routes>
     </Router>
   );
 }
-
-export default App;

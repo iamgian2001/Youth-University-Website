@@ -22,22 +22,22 @@ const navItemList: NavItem[] = [
   { name: "Student Support", icon: MailQuestionMark, path: "/studentsupport" },
 ];
 
-export default function Navbar({ width }: { width: string }) {
+export default function Navbar() {
   const size = 18;
   const strokeWidth = 1.25;
 
   return (
-    <ul className={`nav-list flex flex-col ${width} h-full items-start`}>
+    <ul className="nav-list flex flex-col h-full items-start">
       <div className="w-full flex flex-col space-y-2.5">
-        {navItemList.map((item, index) => {
+        {navItemList.map((item) => {
           const Icon = item.icon;
           return (
-            <div key={index} className="flex flex-row items-center space-x-1.5">
-              <Link to={item.path}>
+            <Link key={item.path} to={item.path}>
+              <div className="flex flex-row items-center space-x-1.5">
                 <Icon size={size} strokeWidth={strokeWidth} />
                 <li>{item.name}</li>
-              </Link>
-            </div>
+              </div>
+            </Link>
           );
         })}
       </div>
