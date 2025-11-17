@@ -43,10 +43,12 @@ export default function Navbar() {
       </div>
 
       <div className="w-full">
-        <div className="flex flex-row items-center space-x-1.5 hover:text-slate-100">
-          <UserCog size={size} strokeWidth={strokeWidth} />
-          <li>Profile & Settings</li>
-        </div>
+        <Link to="/profile-settings">
+          <div className="flex flex-row items-center space-x-1.5 hover:text-slate-100">
+            <UserCog size={size} strokeWidth={strokeWidth} />
+            <li>Profile & Settings</li>
+          </div>
+        </Link>
       </div>
     </ul>
   );

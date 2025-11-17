@@ -68,10 +68,12 @@ function MobileNavbar() {
               </Link>
             );
           })}
-          <div className="flex focus:text-amber-400 font-cta font-medium rounded-2xl gap-5 transition-all duration-200  flex-row items-center">
-            <UserCog size={size} strokeWidth={strokeWidth} />
-            <button onClick={() => setOpen(false)}>Profile & Settings</button>
-          </div>
+          <Link to="/profile-settings">
+            <div className="flex focus:text-amber-400 font-cta font-medium rounded-2xl gap-5 transition-all duration-200  flex-row items-center">
+              <UserCog size={size} strokeWidth={strokeWidth} />
+              <button onClick={() => setOpen(false)}>Profile & Settings</button>
+            </div>
+          </Link>
         </div>
       </div>
     </nav>
