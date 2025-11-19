@@ -23,7 +23,7 @@ public class User {
     @NotBlank(message = "NIC is required!")
     @NotNull
     @Column(name = "nic")
-    private int nic;
+    private String nic;
 
     @NotBlank(message = "First name is required!")
     @Column(name = "fname", nullable = false)
@@ -51,6 +51,9 @@ public class User {
 
     @Column(name = "city")
     private String city;
+
+    @Column(name = "profile_pic")
+    private String profilePic;
 
     @NotBlank(message = "Date of Birth is required!")
     @Column(name = "dob", nullable = false)

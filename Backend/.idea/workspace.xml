@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5749f76b-753e-462d-a9ac-e8b9fcce38fc" name="Changes" comment="" />
+    <list default="true" id="5749f76b-753e-462d-a9ac-e8b9fcce38fc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/NC_LMS/src/main/java/com/nc/nc_lms/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Youth/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Youth/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Youth/src/layout/MobileNavbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Youth/src/layout/MobileNavbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Youth/src/layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Youth/src/layout/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Youth/src/pages/Courses.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Youth/src/pages/Courses.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,6 +169,8 @@
       <workItem from="1763100723821" duration="3819000" />
       <workItem from="1763123387698" duration="2943000" />
       <workItem from="1763185235402" duration="37000" />
+      <workItem from="1763464572312" duration="2031000" />
+      <workItem from="1763528713759" duration="1530000" />
     </task>
     <servers />
   </component>

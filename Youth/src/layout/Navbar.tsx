@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 
 import { Link } from "react-router";
-import React from "react";
+import React, { useState } from "react";
 
 type NavItem = {
   name: string;
@@ -23,6 +23,8 @@ const navItemList: NavItem[] = [
 ];
 
 export default function Navbar() {
+  const [active, setActive] = useState("Home");
+  const activeStyle = "text-slate-300/70";
   const size = 18;
   const strokeWidth = 1.25;
 
@@ -33,9 +35,13 @@ export default function Navbar() {
           const Icon = item.icon;
           return (
             <Link key={item.path} to={item.path}>
-              <div className="flex flex-row items-center space-x-1.5">
+              <div
+                className={`flex flex-row items-center ${
+                  active == item.name ? activeStyle : null
+                } space-x-1.5`}
+              >
                 <Icon size={size} strokeWidth={strokeWidth} />
-                <li>{item.name}</li>
+                <li onClick={() => setActive(item.name)}>{item.name}</li>
               </div>
             </Link>
           );
@@ -43,10 +49,16 @@ export default function Navbar() {
       </div>
 
       <div className="w-full">
-        <Link to="/profile-settings">
-          <div className="flex flex-row items-center space-x-1.5 hover:text-slate-100">
+        <Link to="/profile">
+          <div
+            className={`flex flex-row items-center ${
+              active == "Profile & Settings" ? activeStyle : null
+            } space-x-1.5`}
+          >
             <UserCog size={size} strokeWidth={strokeWidth} />
-            <li>Profile & Settings</li>
+            <li onClick={() => setActive("Profile & Settings")}>
+              Profile & Settings
+            </li>
           </div>
         </Link>
       </div>

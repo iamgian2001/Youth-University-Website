@@ -12,6 +12,8 @@ import {
 
 function MobileNavbar() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("Home");
+  const activeStyle = "text-slate-300/70";
 
   type NavItem = {
     name: string;
@@ -33,9 +35,10 @@ function MobileNavbar() {
   const strokeWidth = 1;
 
   return (
-    <nav className="flex z-9999 items-center justify-end px-2 py-3 bg-neutral-950/10 shadow-lg  w-full  top-0 right-0">
+    <nav className="flex flex-row z-9999 items-center justify-between px-2 py-3 bg-primary/40 text-secondary shadow-lg  w-full  top-0 right-0">
+      <h1 className="mx-3 font-body font-semibold ">{active}</h1>
       <button
-        className="text-2xl w-fit h-fit text-text-light focus:outline-none"
+        className="text-2xl w-fit h-fit text-secondary focus:outline-none"
         onClick={() => setOpen((prev) => !prev)}
         aria-label="Open menu"
       >
@@ -49,8 +52,8 @@ function MobileNavbar() {
         ></div>
       )}
       <div
-        className={`fixed top-0 right-0 z-80 h-full  w-3/4 max-w-xs bg-primary/10 backdrop-blur-2xl backdrop-filter
-           border border-white text-text-light shadow-lg transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 z-80 h-full  w-fit max-w-xs bg-primary/10 backdrop-blur-2xl backdrop-filter
+           border border-white/20 text-text-light shadow-lg transform transition-transform duration-300 ease-in-out ${
              open ? "translate-x-0" : "translate-x-full"
            }`}
       >
@@ -59,19 +62,38 @@ function MobileNavbar() {
             const Icon = item.icon;
             return (
               <Link to={item.path}>
-                <div className="flex focus:text-amber-400 font-cta font-medium rounded-2xl gap-5 transition-all duration-200  flex-row items-center">
+                <div
+                  className={`flex font-cta font-medium rounded-2xl ${
+                    active == item.name ? activeStyle : null
+                  } gap-5 transition-all duration-200  flex-row items-center`}
+                >
                   <Icon size={size} strokeWidth={strokeWidth} />
-                  <button key={item.path} onClick={() => setOpen(false)}>
+                  <button
+                    key={item.path}
+                    onClick={() => {
+                      setOpen(false), setActive(item.name);
+                    }}
+                  >
                     {item.name}
                   </button>
                 </div>
               </Link>
             );
           })}
-          <Link to="/profile-settings">
-            <div className="flex focus:text-amber-400 font-cta font-medium rounded-2xl gap-5 transition-all duration-200  flex-row items-center">
+          <Link to="/profile">
+            <div
+              className={`flex font-cta font-medium rounded-2xl ${
+                active == "Profile & Settings" ? activeStyle : null
+              } gap-5 transition-all duration-200  flex-row items-center`}
+            >
               <UserCog size={size} strokeWidth={strokeWidth} />
-              <button onClick={() => setOpen(false)}>Profile & Settings</button>
+              <button
+                onClick={() => {
+                  setOpen(false), setActive("Profile & Settings");
+                }}
+              >
+                Profile & Settings
+              </button>
             </div>
           </Link>
         </div>
