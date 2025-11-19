@@ -4,14 +4,19 @@ import { Outlet } from "react-router";
 
 export default function DashboardLayout() {
   return (
-    <div className="absolute flex flex-col md:flex-row w-full h-fit md:h-full bg-cover bg-mountains">
-      <div className="block sm:hidden w-full h-fit">
+    <div className="flex flex-col md:flex-row bg-cover bg-mountains h-screen w-full">
+      {/* Mobile Navbar */}
+      <div className="md:hidden w-full">
         <MobileNavbar />
       </div>
-      <div className="hidden sm:block md:w-3/12">
+
+      {/* Sidebar for Desktop */}
+      <div className="hidden md:block md:w-3/12 min-h-screen">
         <Navbar />
       </div>
-      <div className="w-full h-full md:w-9/12">
+
+      {/* Main Content */}
+      <div className="w-full md:w-9/12 p-4 min-h-screen">
         <Outlet />
       </div>
     </div>

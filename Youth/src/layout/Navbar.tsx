@@ -29,39 +29,43 @@ export default function Navbar() {
   const strokeWidth = 1.25;
 
   return (
-    <ul className="nav-list flex flex-col h-full items-start">
-      <div className="w-full flex flex-col space-y-2.5">
+    <div className=" nav-list h-full w-fit flex flex-col">
+      {/* TOP NAV */}
+      <ul className="flex flex-col space-y-3">
         {navItemList.map((item) => {
           const Icon = item.icon;
           return (
-            <Link key={item.path} to={item.path}>
-              <div
-                className={`flex flex-row items-center ${
-                  active == item.name ? activeStyle : null
-                } space-x-1.5`}
-              >
-                <Icon size={size} strokeWidth={strokeWidth} />
-                <li onClick={() => setActive(item.name)}>{item.name}</li>
-              </div>
-            </Link>
+            <li key={item.path}>
+              <Link to={item.path}>
+                <div
+                  className={`flex flex-row items-center space-x-2 ${
+                    active === item.name ? activeStyle : ""
+                  }`}
+                  onClick={() => setActive(item.name)}
+                >
+                  <Icon size={size} strokeWidth={strokeWidth} />
+                  <span>{item.name}</span>
+                </div>
+              </Link>
+            </li>
           );
         })}
-      </div>
+      </ul>
 
-      <div className="w-full">
+      {/* BOTTOM NAV */}
+      <div className="mt-5">
         <Link to="/profile">
           <div
-            className={`flex flex-row items-center ${
-              active == "Profile & Settings" ? activeStyle : null
-            } space-x-1.5`}
+            className={`flex flex-row items-center space-x-2 ${
+              active === "Profile & Settings" ? activeStyle : ""
+            }`}
+            onClick={() => setActive("Profile & Settings")}
           >
             <UserCog size={size} strokeWidth={strokeWidth} />
-            <li onClick={() => setActive("Profile & Settings")}>
-              Profile & Settings
-            </li>
+            <span>Profile & Settings</span>
           </div>
         </Link>
       </div>
-    </ul>
+    </div>
   );
 }
