@@ -87,6 +87,14 @@
   @apply hover:text-slate-100 hover:text-shadow-lg hover:text-shadow-sky-300/20;
 }
 
+.settings-list div {
+  @apply border-b py-3 border-neutral/50  text-left;
+}
+
+.default-card-style {
+  @apply bg-primary/50 backdrop-blur-2xl border border-white/20 shadow-lg rounded-sm;
+}
+
 ::-webkit-scrollbar {
   @apply w-3 h-3 rounded-2xl;
 }

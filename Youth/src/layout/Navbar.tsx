@@ -29,7 +29,7 @@ export default function Navbar() {
   const strokeWidth = 1.25;
 
   return (
-    <div className=" nav-list h-full w-fit flex flex-col">
+    <div className=" nav-list h-full w-full  flex flex-col">
       {/* TOP NAV */}
       <ul className="flex flex-col space-y-3">
         {navItemList.map((item) => {

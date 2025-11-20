@@ -1,4 +1,6 @@
-import { Link } from "react-router";
+import { useMemo, useState } from "react";
+import { NotificationsSection, SecuritySection } from "./SettingsList";
+import { MoveRight } from "lucide-react";
 
 type User = {
   profilePic: string;
@@ -34,12 +36,14 @@ export default function Profile() {
     dob: new Date("1995-03-12"),
   };
 
-  const age = calculateAge(new Date("1995-03-12"));
-
-  return (
-    <div className="flex flex-col justify-center items-center h-full w-full overflow-y-scroll">
-      <div className="flex flex-col space-y-3.5 justify-center items-center py-10 px-5 rounded-sm my-8 bg-primary/50 backdrop-blur-2xl border border-white/20 shadow-lg w-10/12 h-fit">
-        <div className="flex flex-col justify-center items-center gap-3 mb-12">
+  const [active, setActive] = useState("Profile");
+  const [activeSettings, setActiveSettings] = useState("Notifications");
+  const settingsList = [{ name: "Notifications" }, { name: "Security" }];
+  const age = useMemo(() => calculateAge(data.dob), [data.dob]);
+  const Profile = () => {
+    return (
+      <div className="flex flex-col lg:flex-row gap-15 justify-center items-center py-10 px-20 rounded-sm  bg-primary/50 backdrop-blur-2xl border border-white/20 shadow-lg w-10/12 h-fit">
+        <div className="flex flex-col justify-center items-center gap-3 mb-12 w-fit">
           <img
             src={data.profilePic}
             alt="Profile"
@@ -56,40 +60,104 @@ export default function Profile() {
           </li>
 
           <li className="flex flex-col justify-center space-y-1.5 w-full">
-            <div className="w-fullmb-2">Age</div>
-            <div className="text-slate-300 text-sm wrap-anywhere border border-neutral/50 rounded-md p-2">
+            <div className="w-full mb-2 font-light">Age</div>
+            <div className="text-slate-300 text-sm wrap-anywhere border border-neutral/50 rounded-md p-2 min-w-md w-fit">
               {age}
             </div>
           </li>
 
           <li className="flex flex-col justify-center space-y-1.5 w-full">
-            <div className="w-full  border-slate-400 mb-2">Email</div>
-            <div className="text-slate-300 text-sm border  wrap-anywhere border-neutral/50 rounded-md p-2">
+            <div className="w-full  border-slate-400 mb-2 font-light">
+              Email
+            </div>
+            <div className="text-slate-300 text-sm border wrap-anywhere border-neutral/50 rounded-md p-2 min-w-md w-fit">
               {data.email}
             </div>
           </li>
 
           <li className="flex flex-col justify-center space-y-1.5 w-full">
-            <div className="w-full  mb-2">Phone number</div>
-            <div className="text-slate-300 text-sm border  wrap-anywhere  border-neutral/50 rounded-md p-2">
+            <div className="w-full  mb-2 font-light">Phone number</div>
+            <div className="text-slate-300 text-sm border wrap-anywhere  border-neutral/50 rounded-md p-2 min-w-md w-fit">
               {data.phone}
             </div>
           </li>
 
           <li className="flex flex-col justify-center space-y-1.5 w-full">
-            <div className="w-full  mb-2">NIC number</div>
-            <div className="text-slate-300 text-sm border wrap-anywhere border-neutral/50 rounded-md p-2">
+            <div className="w-full  mb-2 font-light">NIC number</div>
+            <div className="text-slate-300 text-sm border wrap-anywhere border-neutral/50 rounded-md p-2 min-w-md w-fit">
               9999999999999999999999999999999999999999999999999999999999
             </div>
           </li>
         </ul>
       </div>
+    );
+  };
+  const Settings = () => {
+    return (
+      <div className="flex flex-col lg:flex-row justify-center items-center  w-fit h-fit">
+        <div className="flex  flex-row">
+          <section className="default-card-style  py-10 px-5 settings-list flex flex-col items-start gap-3 text-md min-w-sm">
+            {settingsList.map((item) => (
+              <div
+                onClick={() => setActiveSettings(item.name)}
+                key={item.name}
+                className={`flex flex-row gap-20 w-full  ${
+                  activeSettings == item.name
+                    ? " text-neutral-500"
+                    : " hover:text-secondary "
+                }`}
+              >
+                <button className="flex items-center justify-between  w-full gap-4">
+                  <span>{item.name}</span>
+                  <MoveRight className="opacity-50" />
+                </button>
+              </div>
+            ))}
+          </section>
+          <section className="default-card-style   py-10 px-5 flex flex-col items-start gap-3 text-md w-full">
+            {renderSettingsContent()}
+          </section>
+        </div>
+      </div>
+    );
+  };
 
-      <Link to="/settings">
-        <button className="text-lg bg-secondary hover:bg-amber-500 font-medium mb-10  w-fit h-fit px-4 py-1 rounded-lg text-primary">
+  const renderSettingsContent = () => {
+    switch (activeSettings) {
+      case "Notifications":
+        return <NotificationsSection />;
+      case "Security":
+        return <SecuritySection />;
+      default:
+        <SecuritySection />;
+    }
+  };
+  return (
+    <div className="flex flex-col md:flex-row h-full w-full gap-2  overflow-auto my-8">
+      <div className="default-card-style flex flex-row md:flex-col  w-fit h-fit   px-6 py-5 gap-2  ">
+        <button
+          onClick={() => setActive("Profile")}
+          className={`text-md border-b  font-medium w-full h-fit p-2  ${
+            active == "Profile"
+              ? "text-slate-500"
+              : "text-white hover:text-secondary"
+          }`}
+        >
+          Profile
+        </button>
+
+        <button
+          onClick={() => setActive("Settings")}
+          className={`text-md  border-b font-medium w-full h-fit p-2  ${
+            active == "Settings"
+              ? "text-slate-500"
+              : "text-white hover:text-secondary"
+          }`}
+        >
           Settings
         </button>
-      </Link>
+      </div>
+      {active == "Profile" ? Profile() : Settings()}
     </div>
   );
 }
