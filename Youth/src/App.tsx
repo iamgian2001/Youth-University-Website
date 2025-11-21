@@ -25,7 +25,6 @@ export default function App() {
           <Route path="/profile" element={<Profile />} />
         </Route>
 
-        {/* Standalone routes */}
         <Route path="/login" element={<Login />} />
 
         {/* 404 */}

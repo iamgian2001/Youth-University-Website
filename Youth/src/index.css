@@ -110,3 +110,14 @@
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #2222ee, #1d5cc2);
 }
+
+grammarly-desktop-integration,
+grammarly-extension,
+g-container,
+g-icon,
+grammarly-card {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}

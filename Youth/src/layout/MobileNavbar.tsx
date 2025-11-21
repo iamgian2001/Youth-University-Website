@@ -61,8 +61,9 @@ function MobileNavbar() {
           {navItemList.map((item) => {
             const Icon = item.icon;
             return (
-              <Link to={item.path}>
+              <Link key={item.path} to={item.path}>
                 <div
+                  key={item.path}
                   className={`flex font-cta font-medium rounded-2xl ${
                     active == item.name ? activeStyle : null
                   } gap-5 transition-all duration-200  flex-row items-center`}
