@@ -6,7 +6,7 @@ import {
   UserCog,
 } from "lucide-react";
 
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import React, { useState } from "react";
 
 type NavItem = {
@@ -23,7 +23,9 @@ const navItemList: NavItem[] = [
 ];
 
 export default function Navbar() {
-  const [active, setActive] = useState("Home");
+  const location = useLocation();
+  console.log(location.pathname);
+  const [active, setActive] = useState(location.pathname);
   const activeStyle =
     "bg-gradient-to-r from-amber-300 to-yellow-50 text-primary";
   const size = 18;
@@ -40,9 +42,9 @@ export default function Navbar() {
               <Link to={item.path}>
                 <div
                   className={`flex flex-row  w-full px-6 py-0.5  items-center space-x-2 ${
-                    active === item.name ? activeStyle : ""
+                    active === item.path ? activeStyle : ""
                   }`}
-                  onClick={() => setActive(item.name)}
+                  onClick={() => setActive(item.path)}
                 >
                   <Icon size={size} strokeWidth={strokeWidth} />
                   <span>{item.name}</span>
@@ -54,19 +56,19 @@ export default function Navbar() {
       </ul>
 
       {/* BOTTOM NAV */}
-      <div className="mt-5">
+      <ul className="mt-5">
         <Link to="/profile">
-          <div
+          <li
             className={`flex flex-row  w-full px-6 py-0.5  items-center space-x-2 ${
-              active === "Profile & Settings" ? activeStyle : ""
+              active === "/profile" ? activeStyle : ""
             }`}
-            onClick={() => setActive("Profile & Settings")}
+            onClick={() => setActive("/profile")}
           >
             <UserCog size={size} strokeWidth={strokeWidth} />
             <span>Profile & Settings</span>
-          </div>
+          </li>
         </Link>
-      </div>
+      </ul>
     </div>
   );
 }
