@@ -24,12 +24,13 @@ const navItemList: NavItem[] = [
 
 export default function Navbar() {
   const [active, setActive] = useState("Home");
-  const activeStyle = "text-slate-300/70";
+  const activeStyle =
+    "bg-gradient-to-r from-amber-300 to-yellow-50 text-primary";
   const size = 18;
   const strokeWidth = 1.25;
 
   return (
-    <div className=" nav-list h-full w-full  flex flex-col">
+    <div className=" nav-list h-full w-fit py-10  flex flex-col">
       {/* TOP NAV */}
       <ul className="flex flex-col space-y-3">
         {navItemList.map((item) => {
@@ -38,7 +39,7 @@ export default function Navbar() {
             <li key={item.path}>
               <Link to={item.path}>
                 <div
-                  className={`flex flex-row items-center space-x-2 ${
+                  className={`flex flex-row  w-full px-6 py-0.5  items-center space-x-2 ${
                     active === item.name ? activeStyle : ""
                   }`}
                   onClick={() => setActive(item.name)}
@@ -56,7 +57,7 @@ export default function Navbar() {
       <div className="mt-5">
         <Link to="/profile">
           <div
-            className={`flex flex-row items-center space-x-2 ${
+            className={`flex flex-row  w-full px-6 py-0.5  items-center space-x-2 ${
               active === "Profile & Settings" ? activeStyle : ""
             }`}
             onClick={() => setActive("Profile & Settings")}

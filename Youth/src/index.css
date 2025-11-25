@@ -81,7 +81,7 @@
 }
 
 .nav-list {
-  @apply text-indigo-100 backdrop-filter backdrop-blur-2xl bg-black/20  lg:text-lg shadow-2xl p-5 justify-between border border-white/20;
+  @apply text-indigo-100 backdrop-filter backdrop-blur-2xl bg-black/20  lg:text-lg shadow-2xl  justify-between border border-white/20;
 }
 .nav-list div div {
   @apply hover:text-slate-100 hover:text-shadow-lg hover:text-shadow-sky-300/20;
