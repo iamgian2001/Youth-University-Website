@@ -31,7 +31,7 @@
 }
 
 .bg-mountains {
-  @apply bg-cover text-text-light bg-[url(flat-mountains.svg)];
+  @apply bg-cover  text-text-light bg-[url(flat-mountains.svg)];
 }
 
 .section-title {

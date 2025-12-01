@@ -9,7 +9,7 @@ interface NewsCardProps {
 
 const NewsCard = ({ imageUrl, tags, title, description }: NewsCardProps) => {
   return (
-    <div className="w-full min-md:w-11/12 bg-bg flex flex-col rounded-lg shadow-lg">
+    <div className="w-full md:w-11/12 bg-bg flex flex-col rounded-lg shadow-lg">
       {/* Image Section */}
       <div
         className="w-full h-48 md:h-72 lg:h-96 bg-cover bg-center rounded-t-lg"

@@ -28,9 +28,90 @@ export default function Courses() {
       name: "Human Computer Interaction",
       path: "/cs1031",
     },
+    {
+      courseCode: "CS1031",
+      name: "Human Computer Interaction",
+      path: "/cs1031",
+    },
+    {
+      courseCode: "CS1031",
+      name: "Human Computer Interaction",
+      path: "/cs1031",
+    },
+    {
+      courseCode: "CS1031",
+      name: "Human Computer Interaction",
+      path: "/cs1031",
+    },
+    {
+      courseCode: "CS1031",
+      name: "Human Computer Interaction",
+      path: "/cs1031",
+    },
+    {
+      courseCode: "CS1031",
+      name: "Human Computer Interaction",
+      path: "/cs1031",
+    },
+    {
+      courseCode: "CS1031",
+      name: "Human Computer Interaction",
+      path: "/cs1031",
+    },
+    {
+      courseCode: "CS1031",
+      name: "Human Computer Interaction",
+      path: "/cs1031",
+    },
+    {
+      courseCode: "CS1031",
+      name: "Human Computer Interaction",
+      path: "/cs1031",
+    },
+    {
+      courseCode: "CS1031",
+      name: "Human Computer Interaction",
+      path: "/cs1031",
+    },
+
+    {
+      courseCode: "CS1031",
+      name: "Human Computer Interaction",
+      path: "/cs1031",
+    },
+    {
+      courseCode: "CS1031",
+      name: "Human Computer Interaction",
+      path: "/cs1031",
+    },
+    {
+      courseCode: "CS1031",
+      name: "Human Computer Interaction",
+      path: "/cs1031",
+    },
+    {
+      courseCode: "CS1031",
+      name: "Human Computer Interaction",
+      path: "/cs1031",
+    },
+    {
+      courseCode: "CS1031",
+      name: "Human Computer Interaction",
+      path: "/cs1031",
+    },
+    {
+      courseCode: "CS1031",
+      name: "Human Computer Interaction",
+      path: "/cs1031",
+    },
+    {
+      courseCode: "CS1031",
+      name: "Human Computer Interaction",
+      path: "/cs1031",
+    },
   ];
   return (
-    <div className="flex flex-col gap-5 w-full  h-full m-10">
+    <div className="flex flex-col gap-5 h-fit">
       <h1 className="border-l-6 w-5/12 px-3 py-2 text-xl border-secondary ">
         Year 1
       </h1>
@@ -47,12 +128,12 @@ export default function Courses() {
           </button>
         </div>
       </form>
-      <div className="mt-2 flex flex-col lg:flex-none lg:grid lg:grid-cols-2 lg:w-9/12 gap-3">
+      <div className="flex flex-col  gap-5 w-full ">
         {courses.map((course) => (
           <motion.div
             key={course.courseCode}
             whileHover={{ y: -5, scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            transition={{ type: "spring", stiffness: 600, damping: 20 }}
           >
             <div className="flex font-semibold default-card-style w-full p-5 items-center justify-between">
               <div className="flex flex-col">

@@ -37,7 +37,7 @@ export default function Profile() {
     dob: new Date("1995-03-12"),
   };
 
-  const { isSm } = useBreakpoints();
+  const { isXl } = useBreakpoints();
 
   const [active, setActive] = useState("Profile");
   const [activeSettings, setActiveSettings] = useState<string | null>(null);
@@ -45,8 +45,8 @@ export default function Profile() {
   const age = useMemo(() => calculateAge(data.dob), [data.dob]);
 
   useEffect(() => {
-    console.log("activesetings: " + activeSettings + " isSM: " + isSm);
-  }, [activeSettings, isSm]);
+    console.log("activesetings: " + activeSettings + " isXl: " + isXl);
+  }, [activeSettings, isXl]);
 
   const ProfileView = () => {
     return (
@@ -107,15 +107,15 @@ export default function Profile() {
         <div className="flex flex-col md:flex-row">
           <section
             className={`default-card-style p-5 ${
-              activeSettings && isSm ? "hidden" : ""
-            } md:py-10 md:px-5 settings-list flex  flex-col items-start gap-3  w-full md:min-w-sm`}
+              activeSettings && isXl ? "hidden" : ""
+            } md:py-10 md:px-5 settings-list flex  flex-col items-start gap-3  w-full`}
           >
             {settingsList.map((item) => (
               <div
                 onClick={() => setActiveSettings(item.name)}
                 key={item.name}
                 className={`flex flex-row gap-20 w-full  ${
-                  activeSettings === item.name && !isSm
+                  activeSettings === item.name && !isXl
                     ? " text-secondary/70"
                     : " hover:text-secondary "
                 }`}
@@ -135,7 +135,7 @@ export default function Profile() {
             <div
               onClick={() => setActiveSettings(null)}
               className={`flex flex-row border border-neutral/50 rounded-md p-2 gap-5 ${
-                isSm ? "" : "hidden"
+                isXl ? "" : "hidden"
               }`}
             >
               <MoveLeft />

@@ -5,6 +5,9 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Courses from "./pages/Courses";
 import Profile from "./pages/Profile";
+import StudentSupport from "./pages/StudentSupport";
+import Resources from "./pages/Resources";
+import Module from "./pages/Module";
 
 import MainLayout from "./layout/MainLayout";
 import DashboardLayout from "./layout/DashboardLayout";
@@ -23,6 +26,9 @@ export default function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/student-support" element={<StudentSupport />} />
+          <Route path="/module" element={<Module />} />
         </Route>
 
         <Route path="/login" element={<Login />} />

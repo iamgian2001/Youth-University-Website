@@ -19,7 +19,7 @@ const navItemList: NavItem[] = [
   { name: "Home", icon: House, path: "/dashboard" },
   { name: "My courses", icon: Book, path: "/courses" },
   { name: "Resources", icon: LibraryBig, path: "/resources" },
-  { name: "Student Support", icon: MailQuestionMark, path: "/studentsupport" },
+  { name: "Student Support", icon: MailQuestionMark, path: "/student-support" },
 ];
 
 export default function Navbar() {
@@ -32,7 +32,7 @@ export default function Navbar() {
   const strokeWidth = 1.25;
 
   return (
-    <div className=" nav-list h-full w-fit py-10  flex flex-col">
+    <div className=" nav-list h-full w-fit py-7  flex flex-col">
       {/* TOP NAV */}
       <ul className="flex flex-col space-y-3">
         {navItemList.map((item) => {
