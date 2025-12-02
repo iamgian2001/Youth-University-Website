@@ -128,7 +128,7 @@ export default function Courses() {
           </button>
         </div>
       </form>
-      <div className="flex flex-col  gap-5 w-full ">
+      <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 w-full ">
         {courses.map((course) => (
           <motion.div
             key={course.courseCode}

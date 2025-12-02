@@ -50,7 +50,7 @@ export default function Profile() {
 
   const ProfileView = () => {
     return (
-      <div className="flex flex-col w-full md:w-10/12 h-full lg:flex-row  gap-8 md:gap-15 justify-center items-center  py-10 px-5 md:py-10 md:px-20 rounded-sm  bg-primary/50 backdrop-blur-2xl border border-white/20 shadow-lg ">
+      <div className="flex flex-col w-full  md:w-fit  h-fit lg:flex-row  gap-8 md:gap-15  items-center  py-10 px-5 md:py-10  rounded-sm  bg-primary/50 backdrop-blur-2xl border border-white/20 shadow-lg ">
         <div className="flex flex-col justify-center items-center gap-3 mb-12 w-fit">
           <img
             src={data.profilePic}
@@ -62,7 +62,7 @@ export default function Profile() {
           </button>
         </div>
 
-        <ul className="flex flex-col gap-3 text-md w-full">
+        <ul className="flex flex-col gap-3 text-md w-fit">
           <li className="font-body text-3xl w-full wrap-anywhere">
             {data.fname + " " + data.lname}
           </li>
@@ -78,21 +78,21 @@ export default function Profile() {
             <div className="w-full  border-slate-400 mb-2 font-light">
               Email
             </div>
-            <div className="text-slate-300 text-sm border wrap-anywhere border-neutral/50 rounded-md p-2 md:min-w-md w-full">
+            <div className="text-slate-300 text-sm border wrap-anywhere border-neutral/50 rounded-md p-2 w-full">
               {data.email}
             </div>
           </li>
 
           <li className="flex flex-col justify-center space-y-1.5 w-full">
             <div className="w-full  mb-2 font-light">Phone number</div>
-            <div className="text-slate-300 text-sm border wrap-anywhere  border-neutral/50 rounded-md p-2 md:min-w-md w-full ">
+            <div className="text-slate-300 text-sm border wrap-anywhere  border-neutral/50 rounded-md p-2  w-full ">
               {data.phone}
             </div>
           </li>
 
           <li className="flex flex-col justify-center space-y-1.5 w-full">
             <div className="w-full  mb-2 font-light">NIC number</div>
-            <div className="text-slate-300 text-sm border wrap-anywhere border-neutral/50 rounded-md p-2 md:min-w-md w-full ">
+            <div className="text-slate-300 text-sm border wrap-anywhere border-neutral/50 rounded-md p-2  w-full ">
               {data.nic}
             </div>
           </li>
@@ -103,12 +103,12 @@ export default function Profile() {
 
   const Settings = () => {
     return (
-      <div className="flex flex-col lg:flex-row justify-center text-sm md:text-md md:items-center  md:w-fit h-full">
-        <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col lg:flex-row justify-center text-sm md:text-md md:items-center   h-full">
+        <div className="flex flex-col md:flex-row w-full xl:w-fit">
           <section
             className={`default-card-style p-5 ${
               activeSettings && isXl ? "hidden" : ""
-            } md:py-10 md:px-5 settings-list flex  flex-col items-start gap-3  w-full`}
+            }  settings-list flex  flex-col  gap-3 w-full`}
           >
             {settingsList.map((item) => (
               <div
@@ -161,8 +161,8 @@ export default function Profile() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row ">
-      <div className="default-card-style flex text-sm md:text-sm flex-row md:flex-col  w-fit h-full   px-6 py-5 gap-2  ">
+    <div className="flex flex-col xl:flex-row  ">
+      <div className="default-card-style flex text-sm md:text-sm flex-row xl:flex-col  w-fit h-full   px-6 py-5 gap-2  ">
         <button
           onClick={() => {
             setActive("Profile"), setActiveSettings(null);

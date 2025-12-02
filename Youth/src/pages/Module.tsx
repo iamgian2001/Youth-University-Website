@@ -1,5 +1,7 @@
 import ModuleLeaders from "../components/ModuleLeaders";
 import ModuleAnnouncements from "../components/ModuleAnnouncements";
+import CourseContent from "../components/CourseContent";
+import type { ContentItem } from "../components/CourseContent";
 
 const dummyModuleHeads = [
   {
@@ -56,6 +58,41 @@ const dummyAnnouncements = [
   },
 ];
 
+const content: ContentItem[] = [
+  {
+    id: 1,
+    title: "Module assignment",
+    type: "assignment",
+    date: new Date(2025, 8, 20),
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+    fileUrl: "/courses",
+    dueDate: new Date(2025, 9, 20),
+  },
+  {
+    id: 2,
+    title: "Module assignment",
+    type: "assignment",
+    date: new Date(2025, 0, 1),
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
+    fileUrl: "/courses",
+    dueDate: new Date(),
+  },
+  {
+    id: 3,
+    title: "Module assignment",
+    type: "assignment",
+    date: new Date(2023, 0, 19),
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
+    fileUrl: "/courses",
+    dueDate: new Date(),
+  },
+];
+
+const sortedContent = [...content].sort(
+  (a, b) => a.date.getTime() - b.date.getTime()
+);
+
 export default function Module() {
   return (
     <div>
@@ -64,6 +101,7 @@ export default function Module() {
         moduleHeads={dummyModuleHeads}
         instructors={dummyInstructors}
       />
+      <CourseContent contentItems={sortedContent} />
     </div>
   );
 }

@@ -13,7 +13,7 @@ import NewsCarousel from "../components/NewsCarousel.js";
 
 function Home() {
   return (
-    <div className="bg-linear-to-br from-zinc-50 to-slate-200 w-screen flex flex-col lg:space-y-30 sm:space-y-3 space-y-5 ">
+    <div className="bg-linear-to-br from-zinc-50 to-slate-200 w-full flex flex-col lg:space-y-30 sm:space-y-3 space-y-5 ">
       {/* Main Hero */}
       <section className="flex flex-col md:flex-row items-center justify-between px-5 my-5 md:max-2xl:my-20 md:px-8 h-fit">
         <div className="w-full md:w-1/2 flex items-center justify-center relative aspect-square md:aspect-auto">
@@ -23,20 +23,20 @@ function Home() {
             </div>
 
             {/* floating badges */}
-            <div className="floating-div top-0 left-0 min-xl:left-20">
-              <p className="text-text-secondary font-cta  md:max-xl:text-2xl min-xl:text-3xl  font-semibold w-fit">
+            <div className="floating-div top-0 left-0 xl:left-20">
+              <p className="text-text-secondary font-cta  md:max-xl:text-2xl xl:text-3xl  font-semibold w-fit">
                 40K
               </p>
               <p className="small-text w-fit">Happy students</p>
             </div>
-            <div className="floating-div right-0 min-xl:right-20">
-              <p className="text-text-secondary font-cta  md:max-xl:text-2xl min-xl:text-3xl  font-semibold w-fit">
+            <div className="floating-div right-0 xl:right-20">
+              <p className="text-text-secondary font-cta  md:max-xl:text-2xl xl:text-3xl  font-semibold w-fit">
                 40K
               </p>
               <p className="small-text w-fit">Happy students</p>
             </div>
             <div className="floating-div bottom-0 left-0 xl:left-16">
-              <p className="text-text-secondary font-cta md:max-xl:text-2xl min-xl:text-3xl   font-semibold w-fit">
+              <p className="text-text-secondary font-cta md:max-xl:text-2xl xl:text-3xl   font-semibold w-fit">
                 40K
               </p>
               <p className="small-text  w-fit">Happy students</p>
@@ -64,7 +64,7 @@ function Home() {
 
       {/* Main Content */}
       <div className="flex flex-col space-y-12 items-center justify-center px-10 ">
-        <section className="h-auto flex flex-col w-full space-y-5 my-12 md:max-2xl:my-20 2xl:my-20 min-xl:w-10/12">
+        <section className="h-auto flex flex-col w-full space-y-5 my-12 md:max-2xl:my-20 2xl:my-20 xl:w-10/12">
           <div className="flex flex-col h-auto text-center items-center justify-center space-y-12">
             <h1 className="main-title text-text-secondary ">
               What do you wanna study?
@@ -84,7 +84,7 @@ function Home() {
             <h1 className="sub-title text-text-secondary w-full">
               Program list
             </h1>
-            <div className="flex flex-col min-lg:flex-row space-y-1.5 md:space-x-2">
+            <div className="flex flex-col lg:flex-row space-y-1.5 md:space-x-2">
               <ProgramCard name="Computer science" image={csImage} />
               <ProgramCard name="Computer science" image={csImage} />
               <ProgramCard name="Computer science" image={csImage} />
@@ -134,7 +134,7 @@ function Home() {
         </section>
 
         {/** student life */}
-        <section className="flex flex-col justify-center items-center my-10  bg-secondary w-full min-xl:w-10/12 ">
+        <section className="flex flex-col justify-center items-center my-10  bg-secondary w-full xl:w-10/12 ">
           <div
             className="flex flex-col justify-center w-full mb-5 bg-cover bg-center bg-blend-multiply bg-primary/70"
             style={{ backgroundImage: `url(${stdImage})` }}
@@ -188,7 +188,7 @@ function Home() {
         </section>
 
         {/** 6 schools */}
-        <section className="flex flex-col w-full space-y-10 justify-center items-center min-xl:w-10/12">
+        <section className="flex flex-col w-full space-y-10 justify-center items-center xl:w-10/12">
           <div className="flex flex-col justify-end text-left px-5 items-center py-5 bg-[url(./assets/school.jpeg)] bg-primary/70 bg-cover bg-center bg-blend-multiply w-full h-96 ">
             <h1 className="main-title text-text-light w-full ">
               6 schools, <br></br>
@@ -200,7 +200,7 @@ function Home() {
               penatibus et
             </p>
           </div>
-          <div className="flex flex-col min-lg:flex-row-reverse w-full h-fit bg-primary">
+          <div className="flex flex-col lg:flex-row-reverse w-full h-fit bg-primary">
             <div className="w-full bg-[url(./assets/uni.jpg)] bg-cover bg-center bg-slate-900/40 bg-blend-multiply h-68"></div>
             <div className="flex flex-col space-y-3 w-full justify-center px-5 py-5 text-left">
               <h2 className="sub-title text-text-light ">
@@ -214,7 +214,7 @@ function Home() {
               </p>
             </div>
           </div>
-          <div className="flex flex-col min-lg:flex-row w-full h-fit bg-primary">
+          <div className="flex flex-col lg:flex-row w-full h-fit bg-primary">
             <div className="w-full bg-[url(./assets/uni2.jpg)] bg-cover bg-center bg-slate-900/40 bg-blend-multiply h-68"></div>
             <div className="flex flex-col space-y-3 w-full justify-center px-5 py-5 text-left">
               <h2 className="sub-title text-text-light ">
@@ -236,7 +236,7 @@ function Home() {
           </div>
         </section>
 
-        <section className="h-fit w-full pb-15  min-xl:w-10/12">
+        <section className="h-fit w-full pb-15  xl:w-10/12">
           <h1 className="section-title text-text-secondary mb-4 text-center">
             News & Updates
           </h1>
