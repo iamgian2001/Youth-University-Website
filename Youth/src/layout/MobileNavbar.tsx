@@ -28,7 +28,7 @@ function MobileNavbar() {
     {
       name: "Student Support",
       icon: MailQuestionMark,
-      path: "/studentsupport",
+      path: "/student-support",
     },
   ];
   const size = 22;

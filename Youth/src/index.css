@@ -37,6 +37,10 @@ root {
   height: 100%;
 }
 
+select option {
+  @apply bg-primary focus:bg-accent;
+}
+
 .bg-mountains {
   @apply bg-cover  text-text-light bg-[url(flat-mountains.svg)];
 }

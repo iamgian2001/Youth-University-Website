@@ -28,7 +28,7 @@ const ModuleLeaders = ({ moduleHeads, instructors }: ModuleLeadersProps) => {
           {allPeople.map((person) => (
             <div
               key={person.email}
-              className="flex flex-col w-xs items-center text-center default-card-style rounded-xl shadow-sm border p-4 hover:shadow-md transition-shadow"
+              className="flex flex-col w-full md:w-fit text-wrap items-center text-center default-card-style rounded-xl shadow-sm border p-4 hover:shadow-md transition-shadow"
             >
               {person.avatarUrl ? (
                 <img
@@ -46,7 +46,7 @@ const ModuleLeaders = ({ moduleHeads, instructors }: ModuleLeadersProps) => {
               <p className="text-sm text-secondary font-medium mb-1">
                 {person.role}
               </p>
-              <p className="text-sm">{person.email}</p>
+              <p className="text-sm text-wrap ">{person.email}</p>
             </div>
           ))}
         </div>
