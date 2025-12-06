@@ -1,11 +1,5 @@
 import { FaExternalLinkAlt } from "react-icons/fa";
-
-interface NewsCardProps {
-  imageUrl: string;
-  tags: string[];
-  title: string;
-  description: string;
-}
+import type { NewsCardProps } from "../types";
 
 const NewsCard = ({ imageUrl, tags, title, description }: NewsCardProps) => {
   return (

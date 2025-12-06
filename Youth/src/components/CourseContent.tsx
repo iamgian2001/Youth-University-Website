@@ -7,26 +7,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
-
-export type ContentItem = {
-  id: number;
-  title: string;
-  type: "assignment" | "reading" | "video" | "document" | "other";
-  date: Date;
-  description?: string;
-  fileUrl?: string;
-  fileSize?: string;
-  dueDate?: Date;
-};
-
-export type ContentProps = {
-  contentItems: ContentItem[];
-};
-
-type GroupedContent = {
-  date: string;
-  items: ContentItem[];
-};
+import type { ContentProps } from "../types";
 
 export default function CourseContent({ contentItems }: ContentProps) {
   return (

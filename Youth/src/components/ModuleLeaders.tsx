@@ -1,15 +1,5 @@
 import { User } from "lucide-react";
-
-type Person = {
-  name: string;
-  email: string;
-  avatarUrl?: string;
-};
-
-type ModuleLeadersProps = {
-  moduleHeads: Person[];
-  instructors: Person[];
-};
+import type { ModuleLeadersProps } from "../types";
 
 const ModuleLeaders = ({ moduleHeads, instructors }: ModuleLeadersProps) => {
   const allPeople = [

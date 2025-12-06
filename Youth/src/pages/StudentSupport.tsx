@@ -1,15 +1,6 @@
 import { ArrowDown, Paperclip, X } from "lucide-react";
 import { useState } from "react";
-
-export type Ticket = {
-  id: number;
-  title: string;
-  date: Date;
-  description: string;
-  attachmentUrl: string;
-  reply: string;
-  status: number;
-};
+import type { Ticket } from "../types";
 
 const dummyTickets: Ticket[] = [
   {

@@ -1,10 +1,5 @@
 import { FaExternalLinkAlt } from "react-icons/fa";
-
-type CourseCardProps = {
-  title: string;
-  description: string;
-  linkText: string;
-};
+import type { CourseCardProps } from "../types";
 
 const CourseCard = ({ title, description, linkText }: CourseCardProps) => {
   return (

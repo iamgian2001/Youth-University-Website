@@ -1,19 +1,11 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import clsx from "clsx";
+import type { AnnoncementProps } from "../types";
 
-type Announcement = {
-  id: number;
-  title: string;
-  content: string;
-  date: Date;
-};
-
-type Props = {
-  announcements: Announcement[];
-};
-
-export default function ModuleAnnouncements({ announcements }: Props) {
+export default function ModuleAnnouncements({
+  announcements,
+}: AnnoncementProps) {
   const [openId, setOpenId] = useState<number | null>(null);
 
   const sorted = [...announcements].sort(

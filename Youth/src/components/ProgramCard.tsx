@@ -1,7 +1,4 @@
-interface ProgramCardProps {
-  name: string;
-  image: string;
-}
+import type { ProgramCardProps } from "../types";
 
 function ProgramCard({ name, image }: ProgramCardProps) {
   return (

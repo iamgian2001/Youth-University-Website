@@ -8,7 +8,7 @@ import Profile from "./pages/Profile";
 import StudentSupport from "./pages/StudentSupport";
 import Resources from "./pages/Resources";
 import Module from "./pages/Module";
-import Page404 from "./pages/page404";
+import Page404 from "./pages/Page404";
 
 import MainLayout from "./layout/MainLayout";
 import DashboardLayout from "./layout/DashboardLayout";
@@ -29,7 +29,7 @@ export default function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/student-support" element={<StudentSupport />} />
-          <Route path="/module" element={<Module />} />
+          <Route path="/courses/:moduleId" element={<Module />} />
         </Route>
 
         <Route path="/login" element={<Login />} />

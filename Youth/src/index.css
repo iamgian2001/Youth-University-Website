@@ -38,7 +38,7 @@ root {
 }
 
 select option {
-  @apply bg-primary focus:bg-accent;
+  @apply bg-primary;
 }
 
 .bg-mountains {
