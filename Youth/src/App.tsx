@@ -8,6 +8,7 @@ import Profile from "./pages/Profile";
 import StudentSupport from "./pages/StudentSupport";
 import Resources from "./pages/Resources";
 import Module from "./pages/Module";
+import Page404 from "./pages/page404";
 
 import MainLayout from "./layout/MainLayout";
 import DashboardLayout from "./layout/DashboardLayout";
@@ -34,7 +35,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
 
         {/* 404 */}
-        <Route path="*" element={<div>404 Not Found</div>} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
     </Router>
   );
