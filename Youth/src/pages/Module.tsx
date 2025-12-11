@@ -21,7 +21,7 @@ export default function ModulePage() {
 
   return (
     <div>
-      <h1 className="border-l-8 border-secondary p-3 w-fit bg-primary mb-10">
+      <h1 className="border-l-8 font-semibold lg:text-2xl border-secondary p-3 w-fit bg-primary mb-10">
         {moduleData.courseName} - {moduleData.courseCode}
       </h1>
 

@@ -1,15 +1,9 @@
 import { ArrowRight, Search } from "lucide-react";
-import type { Module } from "../types";
+import type { Course, Module } from "../types";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 
 export default function Courses() {
-  type Course = {
-    courseCode: string;
-    courseName: string;
-    path: string;
-    data: Module;
-  };
 
   const dummyModuleHeads = [
     {

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 export type Ticket = {
   id: number;
   title: string;
@@ -74,4 +75,20 @@ export type Module = {
   moduleLeadersObj: ModuleLeadersProps;
   announcementsObj: AnnoncementProps;
   contentObj: ContentProps;
+};
+
+export type Course = {
+  courseCode: string;
+  courseName: string;
+  path: string;
+  data: Module;
+};
+
+export type UserRoleContextType = {
+  userRole: "guest" | "admin" | "lecturer" | "instructor" | "student" | string;
+  setUserRole: React.Dispatch<React.SetStateAction<string>>;
+};
+
+export type Props = {
+  children?: ReactNode;
 };
