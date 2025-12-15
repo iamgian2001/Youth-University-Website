@@ -1,10 +1,9 @@
 import { ArrowRight, Search } from "lucide-react";
-import type { Course, Module } from "../types";
+import type { Course, Module } from "../../types";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 
 export default function Courses() {
-
   const dummyModuleHeads = [
     {
       name: "Dr. Amanda Perera",

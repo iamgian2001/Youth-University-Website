@@ -89,6 +89,6 @@ export type UserRoleContextType = {
   setUserRole: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export type Props = {
+export type ChildrenProps = {
   children?: ReactNode;
 };

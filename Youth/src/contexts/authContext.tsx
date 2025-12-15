@@ -1,12 +1,12 @@
-import { createContext, useState, useContext } from "react";
-import type { UserRoleContextType, Props } from "../types";
+import { createContext, useState } from "react";
+import type { UserRoleContextType, ChildrenProps } from "../types";
 
 export const UserRoleContext = createContext<UserRoleContextType>({
   userRole: "guest",
   setUserRole: () => {},
 });
 
-export function UserRoleProvider({ children }: Props) {
+export function UserRoleProvider({ children }: ChildrenProps) {
   const [userRole, setUserRole] = useState("guest");
   return (
     <UserRoleContext.Provider value={{ userRole, setUserRole }}>

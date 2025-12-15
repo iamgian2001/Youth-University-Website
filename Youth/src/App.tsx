@@ -3,13 +3,14 @@ import { UserRoleProvider } from "./contexts/authContext";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
-import Courses from "./pages/Courses";
+import Dashboard from "./pages/student/Dashboard";
+import Courses from "./pages/student/Courses";
 import Profile from "./pages/Profile";
-import StudentSupport from "./pages/StudentSupport";
-import Resources from "./pages/Resources";
-import Module from "./pages/Module";
+import StudentSupport from "./pages/student/StudentSupport";
+import Resources from "./pages/student/Resources";
+import Module from "./pages/student/Module";
 import Page404 from "./pages/Page404";
+import Accounts from "./pages/admin/Accounts";
 
 import MainLayout from "./layout/MainLayout";
 import DashboardLayout from "./layout/DashboardLayout";
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/resources" element={<Resources />} />
             <Route path="/student-support" element={<StudentSupport />} />
             <Route path="/courses/:moduleId" element={<Module />} />
+            <Route path="/accounts-admin" element={<Accounts />} />
           </Route>
 
           <Route path="/login" element={<Login />} />

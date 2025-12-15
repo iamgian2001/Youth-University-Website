@@ -1,10 +1,10 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
-import dummyModules from "../data/dummyModules";
-import ModuleLeaders from "../components/ModuleLeaders";
-import ModuleAnnouncements from "../components/ModuleAnnouncements";
-import CourseContent from "../components/CourseContent";
-import type { Module } from "../types";
+import dummyModules from "../../data/dummyModules";
+import ModuleLeaders from "../../components/ModuleLeaders";
+import ModuleAnnouncements from "../../components/ModuleAnnouncements";
+import CourseContent from "../../components/CourseContent";
+import type { Module } from "../../types";
 
 export default function ModulePage() {
   const { moduleId } = useParams();

@@ -1,5 +1,5 @@
 import { ScrollText, SquareLibrary } from "lucide-react";
-import { useBreakpoints } from "../hooks/BreakPoints";
+import { useBreakpoints } from "../../hooks/BreakPoints";
 import { Link } from "react-router";
 
 export default function Resources() {
