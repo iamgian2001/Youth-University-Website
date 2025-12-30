@@ -26,10 +26,4 @@ public class StudentController {
 
     }
 
-    @PostMapping("student/create")
-    @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<Student> createStudent(@RequestBody Student newStudent){
-        Student student = new Student();
-
-    }
 }

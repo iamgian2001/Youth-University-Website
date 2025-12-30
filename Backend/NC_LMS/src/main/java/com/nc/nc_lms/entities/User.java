@@ -55,8 +55,8 @@ public class User {
     @Column(name = "profile_pic")
     private String profilePic;
 
-    @NotBlank(message = "Date of Birth is required!")
-    @Column(name = "dob", nullable = false)
+    @NotNull(message = "Date of Birth is required!")
+    @Column(name = "dob")
     private LocalDate dob;
 
     @Column(name = "gender")

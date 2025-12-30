@@ -46,7 +46,6 @@ export default function Accounts() {
     <div className="p-6">
       <h1 className="text-2xl font-semibold mb-4">Manage Accounts</h1>
 
-      {/* FILTER BAR */}
       <div className="flex items-center gap-3 mb-4">
         <input
           placeholder="Search name or email..."
@@ -125,7 +124,6 @@ export default function Accounts() {
         </table>
       </div>
 
-      {/* PAGINATION */}
       <div className="flex justify-between mt-4">
         <button
           disabled={page <= 1}
