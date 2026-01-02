@@ -5,6 +5,7 @@ import com.nc.nc_lms.entities.Student;
 import com.nc.nc_lms.repositories.StudentRepository;
 import com.nc.nc_lms.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -27,49 +28,14 @@ public class StudentServiceImpl implements StudentService {
 
         student.setRole("STUDENT");
 
-        if (student.getDegreeType() == null || student.getDegreeType().isEmpty()) {
-            throw new IllegalArgumentException("Degree type is required");
-        }
-
-        if (student.getGender() == null || student.getGender().isEmpty()) {
-            throw new IllegalArgumentException("Gender is required");
-        }
-
-        if (student.getFirstName() == null || student.getFirstName().isEmpty()) {
-            throw new IllegalArgumentException("First name is required");
-        }
-
-        if (student.getLastName() == null || student.getLastName().isEmpty()) {
-            throw new IllegalArgumentException("Last name is required");
-        }
-
-        if (student.getEmail() == null || student.getEmail().isBlank()) {
-            throw new IllegalArgumentException("Email is required");
-        }
-
-        if(student.getPhoneNumber() == null || student.getPhoneNumber().isBlank()){
-            throw new IllegalArgumentException("Phone number is required");
-        }
-
-        if(student.getDob()==null ){
-            throw new IllegalArgumentException("Dob is required");
-        }
-
-        if (student.getNic() == null || student.getNic().isBlank()) {
-            throw new IllegalArgumentException("NIC is required");
-        }
-
-        if (student.getPasswordHash() == null || student.getPasswordHash().isBlank()) {
-            throw new IllegalArgumentException("Password is required");
-        }
 
         student.setEmail(student.getEmail().trim().toLowerCase());
         student.setDegreeType(student.getDegreeType().trim().toLowerCase());
         student.setGender(student.getGender().trim().toLowerCase());
         student.setAddress(student.getAddress().trim().toLowerCase());
         student.setCity(student.getCity().trim().toLowerCase());
-        student.setFirstName(student.getFirstName().trim());
-        student.setLastName(student.getLastName().trim());
+        student.setFirstName(student.getFirstName().trim().toLowerCase());
+        student.setLastName(student.getLastName().trim().toLowerCase());
 
         if (studentRepository.existsByEmail(student.getEmail())) {
             throw new RuntimeException("Email already exists");
@@ -118,17 +84,25 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> findAllByProgram(String program) {
-        return List.of();
+        return studentRepository.findAllByProgram(program);
     }
 
     @Override
-    public List<Student> findAllByName(String name) {
-        return List.of();
+    public List<Student> findAllByDegreeType(String degreeType) {
+        return studentRepository.findAllByDegreeType(degreeType);
     }
 
     @Override
-    public List<Student> findAllByEmail(String email) {
-        return List.of();
+    public List<Student> findAllByFirstNameOrLastName(String firstName, String lastName, Sort sort) {
+        firstName = firstName.toLowerCase();
+        lastName = lastName.toLowerCase();
+        return studentRepository.findAllByFirstNameOrLastName(firstName,lastName,sort);
+    }
+
+
+    @Override
+    public List<Student> findAllByEmail(String email, Sort sort) {
+        return studentRepository.findAllByEmail(email,sort);
     }
 
     @Override

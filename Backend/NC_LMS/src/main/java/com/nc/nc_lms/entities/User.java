@@ -3,6 +3,7 @@ package com.nc.nc_lms.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -25,10 +26,12 @@ public class User {
     @Column(name = "nic")
     private String nic;
 
+    @Pattern(regexp = "^[A-Za-z .]+$", message = "Only letters, spaces, and dots are allowed")
     @NotBlank(message = "First name is required!")
     @Column(name = "fname", nullable = false)
     private String firstName;
 
+    @Pattern(regexp = "^[A-Za-z .]+$", message = "Only letters, spaces, and dots are allowed")
     @NotBlank(message = "Last name is required!")
     @Column(name = "lname", nullable = false)
     private String lastName;

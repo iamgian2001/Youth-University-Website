@@ -1,6 +1,7 @@
 package com.nc.nc_lms.services;
 
 import com.nc.nc_lms.entities.Student;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 
@@ -15,8 +16,9 @@ public interface StudentService {
 
     List<Student> findAll();
     List<Student> findAllByProgram(String program);
-    List<Student> findAllByName(String name);
-    List<Student> findAllByEmail(String email);
+    List<Student> findAllByDegreeType(String degreeType);
+    List<Student> findAllByFirstNameOrLastName(String firstName, String lastName, Sort sort);
+    List<Student> findAllByEmail(String email, Sort sort);
     List<Student> findAllByPhone(String phone);
     List<Student> findAllByEmailAndPhone(String email, String phone);
     List<Student> findAllByPhoneAndName(String phone, String name);
