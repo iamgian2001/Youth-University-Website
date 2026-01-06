@@ -1,5 +1,6 @@
-package com.nc.nc_lms.entities;
+package com.nc.nc_lms.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -7,7 +8,6 @@ import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Data
 @Entity
@@ -24,7 +24,7 @@ public class User {
     @NotBlank(message = "NIC is required!")
     @NotNull
     @Column(name = "nic")
-    private String nic;
+    @JsonIgnore private String nic;
 
     @Pattern(regexp = "^[A-Za-z .]+$", message = "Only letters, spaces, and dots are allowed")
     @NotBlank(message = "First name is required!")
@@ -43,7 +43,7 @@ public class User {
     @NotBlank(message = "Password is required")
     @NotNull
     @Column(name = "password", length = 72)
-    private String passwordHash;
+    @JsonIgnore private String passwordHash;
 
     @NotBlank(message = "Phone number is required!")
     @Column(name = "phone", nullable = false)

@@ -1,9 +1,9 @@
-package com.nc.nc_lms.services.impl;
+package com.nc.nc_lms.service.impl;
 
 
-import com.nc.nc_lms.entities.Student;
-import com.nc.nc_lms.repositories.StudentRepository;
-import com.nc.nc_lms.services.StudentService;
+import com.nc.nc_lms.entity.Student;
+import com.nc.nc_lms.repository.StudentRepository;
+import com.nc.nc_lms.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;

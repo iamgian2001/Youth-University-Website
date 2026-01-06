@@ -1,4 +1,4 @@
-package com.nc.nc_lms.entities;
+package com.nc.nc_lms.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

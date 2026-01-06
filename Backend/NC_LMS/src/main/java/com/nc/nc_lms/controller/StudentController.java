@@ -1,8 +1,6 @@
-package com.nc.nc_lms.controllers;
+package com.nc.nc_lms.controller;
 
-import com.nc.nc_lms.entities.Student;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import com.nc.nc_lms.entity.Student;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;

@@ -1,13 +1,11 @@
-package com.nc.nc_lms.services.impl;
+package com.nc.nc_lms.service.impl;
 
-import com.nc.nc_lms.entities.Lecturer;
-import com.nc.nc_lms.repositories.LecturerRepository;
-import com.nc.nc_lms.services.LecturerService;
+import com.nc.nc_lms.entity.Lecturer;
+import com.nc.nc_lms.repository.LecturerRepository;
+import com.nc.nc_lms.service.LecturerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
 @Service
@@ -108,6 +106,11 @@ public class LecturerServiceImpl implements LecturerService {
     }
 
     @Override
+    public List<Lecturer> findAllByDepartment(String department) {
+        return lecturerRepository.findAllByDepartment(department);
+    }
+
+    @Override
     public List<Lecturer> findAllByProgram(String program) {
         return List.of();
     }
@@ -122,8 +125,5 @@ public class LecturerServiceImpl implements LecturerService {
         return List.of();
     }
 
-    @Override
-    public List<Lecturer> findByDepartment(String department) {
-        return List.of();
-    }
+
 }

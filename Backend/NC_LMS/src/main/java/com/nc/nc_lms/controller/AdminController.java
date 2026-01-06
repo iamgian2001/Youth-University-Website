@@ -1,16 +1,13 @@
-package com.nc.nc_lms.controllers;
+package com.nc.nc_lms.controller;
 
-import com.nc.nc_lms.entities.Lecturer;
-import com.nc.nc_lms.entities.Student;
-import com.nc.nc_lms.services.LecturerService;
-import com.nc.nc_lms.services.StudentService;
+import com.nc.nc_lms.entity.Lecturer;
+import com.nc.nc_lms.entity.Student;
+import com.nc.nc_lms.service.LecturerService;
+import com.nc.nc_lms.service.StudentService;
 import jakarta.validation.Valid;
-import org.hibernate.annotations.ConcreteProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,38 +36,28 @@ public class AdminController {
         return ResponseEntity.ok(lecturerService.save(lecturer));
     }
 
+    @GetMapping("/getLec-department")
+    public ResponseEntity<?> getLecturerDepartment(@RequestParam String department) {
+            List <Lecturer> lecturers = lecturerService.findAllByDepartment(department);
+            return ResponseEntity.ok(lecturers);
+    }
+
+
     @GetMapping("/getStd-program")
     public ResponseEntity<?> getStudentsByProgram(@RequestParam String program) {
-        try {
             List<Student> students = studentService.findAllByProgram(program);
-            return new ResponseEntity<>(students, HttpStatus.OK);
-        } catch (IllegalArgumentException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-        } catch (RuntimeException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
-        } catch (Exception e) {
-            return new ResponseEntity<>("An error occurred while retrieving the students", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+            return ResponseEntity.ok(students);
     }
 
     @GetMapping("/getStd-degree")
     public ResponseEntity<?> getStudentsByDegree(@RequestParam String degree) {
-        try {
             List<Student> students = studentService.findAllByDegreeType(degree);
-            return new ResponseEntity<>(students, HttpStatus.OK);
-        } catch (IllegalArgumentException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-        } catch (RuntimeException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
-        } catch (Exception e) {
-            return new ResponseEntity<>("An error occurred while retrieving the students", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+            return ResponseEntity.ok(students);
     }
 
     @GetMapping("/getStd-name")
     public ResponseEntity<?> getStudentsByName(@RequestParam String name, @RequestParam(required = false) String sortBy,
                                                @RequestParam(required = false) String sortDirection ) {
-        try {
             Sort sort;
             if (sortBy != null && !sortBy.isEmpty()) {
                 Sort.Direction direction = "desc".equalsIgnoreCase(sortDirection)
@@ -82,22 +69,16 @@ public class AdminController {
             }
             List<Student> student = studentService.findAllByFirstNameOrLastName(name, name,sort);
             if(!student.isEmpty()) {
-                return new ResponseEntity<>(student, HttpStatus.OK);
+                return ResponseEntity.ok(student);
             }else{
-                return new ResponseEntity<>(student, HttpStatus.NO_CONTENT);
+                return ResponseEntity.noContent().build();
             }
-        } catch (IllegalArgumentException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-        } catch (RuntimeException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
-        } catch (Exception e) {
-            return new ResponseEntity<>("An error occurred while retrieving the students by name", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+
     }
 
     @GetMapping("/getStd-email")
     public ResponseEntity<?> getStudentsByEmail(@RequestParam String email, @RequestParam(required = false) String sortDirection) {
-        try {
+
             Sort sort;
             if(sortDirection != null && !sortDirection.isEmpty()) {
                 sort = Sort.by(Sort.Direction.ASC);
@@ -109,18 +90,8 @@ public class AdminController {
                 }
             }
             List<Student> students = studentService.findAllByEmail(email,sort);
-            return new ResponseEntity<>(students, HttpStatus.OK);
-        }
-        catch (IllegalArgumentException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-        }
-        catch (RuntimeException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
-        }catch (Exception e) {
-            return new ResponseEntity<>("An error occurred while retrieving the students by email", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+            return ResponseEntity.ok(students);
+
     }
-
-
 
 }

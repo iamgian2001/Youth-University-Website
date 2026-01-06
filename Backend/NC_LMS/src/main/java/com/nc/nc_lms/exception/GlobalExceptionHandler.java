@@ -1,4 +1,4 @@
-package com.nc.nc_lms.exceptions;
+package com.nc.nc_lms.exception;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

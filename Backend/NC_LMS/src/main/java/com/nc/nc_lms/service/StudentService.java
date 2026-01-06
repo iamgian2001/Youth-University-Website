@@ -1,6 +1,6 @@
-package com.nc.nc_lms.services;
+package com.nc.nc_lms.service;
 
-import com.nc.nc_lms.entities.Student;
+import com.nc.nc_lms.entity.Student;
 import org.springframework.data.domain.Sort;
 
 import java.util.List;

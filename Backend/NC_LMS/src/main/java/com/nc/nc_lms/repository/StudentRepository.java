@@ -1,12 +1,8 @@
-package com.nc.nc_lms.repositories;
+package com.nc.nc_lms.repository;
 
-import com.nc.nc_lms.entities.Student;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import org.springframework.data.domain.Limit;
+import com.nc.nc_lms.entity.Student;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
