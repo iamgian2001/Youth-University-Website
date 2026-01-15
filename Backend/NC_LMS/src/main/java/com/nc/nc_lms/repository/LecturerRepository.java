@@ -12,4 +12,10 @@ public interface LecturerRepository extends JpaRepository<Lecturer, Integer> {
     boolean existsByEmail(String email);
 
     List<Lecturer> findAllByDepartment(String department);
+
+    java.util.Optional<Lecturer> findByEmail(String email);
+
+    java.util.Optional<Lecturer> findByPhoneNumber(String phoneNumber);
+
+    List<Lecturer> findAllByPhoneNumber(String phoneNumber);
 }

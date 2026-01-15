@@ -25,4 +25,10 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
 
     List<Student> findAllByEmail(String email, Sort sort);
 
+    java.util.Optional<Student> findByEmail(String email);
+
+    java.util.Optional<Student> findByPhoneNumber(String phoneNumber);
+
+    List<Student> findAllByPhoneNumber(String phoneNumber);
+
 }

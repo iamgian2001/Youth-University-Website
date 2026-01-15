@@ -17,5 +17,5 @@ public class UserResponseDTO {
     private LocalDate dob;
     private String gender;
     private String role;
-    // No nic, no passwordHash
+
 }

@@ -37,14 +37,6 @@ public class StudentServiceImpl implements StudentService {
         student.setFirstName(student.getFirstName().trim().toLowerCase());
         student.setLastName(student.getLastName().trim().toLowerCase());
 
-        if (studentRepository.existsByEmail(student.getEmail())) {
-            throw new RuntimeException("Email already exists");
-        }
-
-        if (studentRepository.existsByNic(student.getNic())) {
-            throw new RuntimeException("NIC already exists");
-        }
-
         student.setPasswordHash(passwordEncoder.encode(student.getPasswordHash()));
 
         return studentRepository.save(student);
@@ -53,33 +45,36 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student findById(Integer id) {
-        return null;
+        return studentRepository.findById(id).orElse(null);
     }
 
     @Override
     public Student findByName(String name) {
-        return null;
+        java.util.List<Student> list = studentRepository.findAllByFirstNameOrLastName(name.toLowerCase(), name.toLowerCase(), Sort.by(Sort.Direction.ASC, "firstName"));
+        return list.isEmpty() ? null : list.get(0);
     }
 
     @Override
     public Student findByEmail(String email) {
-        return null;
+        return studentRepository.findByEmail(email).orElse(null);
     }
 
     @Override
     public Student findByPhone(String phone) {
-        return null;
+        return studentRepository.findByPhoneNumber(phone).orElse(null);
     }
 
     @Override
     public Student findByEmailAndPhone(String email, String phone) {
+        Student byEmail = findByEmail(email);
+        if (byEmail != null && byEmail.getPhoneNumber() != null && byEmail.getPhoneNumber().equals(phone)) return byEmail;
         return null;
     }
 
 
     @Override
     public List<Student> findAll() {
-        return List.of();
+        return studentRepository.findAll();
     }
 
     @Override
@@ -107,67 +102,83 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> findAllByPhone(String phone) {
-        return List.of();
+        return studentRepository.findAllByPhoneNumber(phone);
     }
 
     @Override
     public List<Student> findAllByEmailAndPhone(String email, String phone) {
-        return List.of();
+        Student s = findByEmailAndPhone(email, phone);
+        return s == null ? java.util.List.of() : java.util.List.of(s);
     }
 
     @Override
     public List<Student> findAllByPhoneAndName(String phone, String name) {
-        return List.of();
+        Student byPhone = findByPhone(phone);
+        if (byPhone != null && (name.equalsIgnoreCase(byPhone.getFirstName()) || name.equalsIgnoreCase(byPhone.getLastName()))) {
+            return java.util.List.of(byPhone);
+        }
+        return java.util.List.of();
     }
 
     @Override
     public List<Student> findAllByPhoneAndEmail(String phone, String email) {
-        return List.of();
+        Student byPhone = findByPhone(phone);
+        if (byPhone != null && email.equalsIgnoreCase(byPhone.getEmail())) return java.util.List.of(byPhone);
+        return java.util.List.of();
     }
 
     @Override
     public List<Student> findAllByPhoneAndNameAndEmail(String phone, String name, String email) {
-        return List.of();
+        Student byPhone = findByPhone(phone);
+        if (byPhone != null && email.equalsIgnoreCase(byPhone.getEmail()) && (name.equalsIgnoreCase(byPhone.getFirstName()) || name.equalsIgnoreCase(byPhone.getLastName()))) {
+            return java.util.List.of(byPhone);
+        }
+        return java.util.List.of();
     }
 
     @Override
     public void deleteById(Integer id) {
-
+        studentRepository.deleteById(id);
     }
 
     @Override
     public void deleteByName(String name) {
-
+        java.util.List<Student> list = studentRepository.findAllByFirstNameOrLastName(name.toLowerCase(), name.toLowerCase(), Sort.by(Sort.Direction.ASC, "firstName"));
+        list.forEach(s -> studentRepository.deleteById(s.getId()));
     }
 
     @Override
     public void deleteByEmail(String email) {
-
+        studentRepository.findByEmail(email).ifPresent(s -> studentRepository.deleteById(s.getId()));
     }
 
     @Override
     public void deleteByPhone(String phone) {
-
+        studentRepository.findByPhoneNumber(phone).ifPresent(s -> studentRepository.deleteById(s.getId()));
     }
 
     @Override
     public void deleteByEmailAndPhone(String email, String phone) {
-
+        Student s = findByEmailAndPhone(email, phone);
+        if (s != null) studentRepository.deleteById(s.getId());
     }
 
     @Override
     public void deleteByPhoneAndName(String phone, String name) {
-
+        java.util.List<Student> list = findAllByPhoneAndName(phone, name);
+        list.forEach(st -> studentRepository.deleteById(st.getId()));
     }
 
     @Override
     public void deleteByPhoneAndEmail(String phone, String email) {
-
+        java.util.List<Student> list = findAllByPhoneAndEmail(phone, email);
+        list.forEach(st -> studentRepository.deleteById(st.getId()));
     }
 
     @Override
     public void deleteByPhoneAndNameAndEmail(String phone, String name, String email) {
-
+        java.util.List<Student> list = findAllByPhoneAndNameAndEmail(phone, name, email);
+        list.forEach(st -> studentRepository.deleteById(st.getId()));
     }
 
 

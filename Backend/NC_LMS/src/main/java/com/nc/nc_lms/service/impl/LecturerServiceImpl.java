@@ -87,22 +87,22 @@ public class LecturerServiceImpl implements LecturerService {
     }
     @Override
     public Lecturer findById(Integer id) {
-        return null;
+        return lecturerRepository.findById(id).orElse(null);
     }
 
     @Override
     public Lecturer findByEmail(String email) {
-        return null;
+        return lecturerRepository.findByEmail(email).orElse(null);
     }
 
     @Override
     public Lecturer findByPhone(String phone) {
-        return null;
+        return lecturerRepository.findByPhoneNumber(phone).orElse(null);
     }
 
     @Override
     public Lecturer findByNIC(String nic) {
-        return null;
+        return lecturerRepository.findAll().stream().filter(l -> nic.equalsIgnoreCase(l.getNic())).findFirst().orElse(null);
     }
 
     @Override
@@ -117,12 +117,12 @@ public class LecturerServiceImpl implements LecturerService {
 
     @Override
     public List<Lecturer> findByFirstNameOrLastName(String firstName, String lastName) {
-        return List.of();
+        return lecturerRepository.findAll().stream().filter(l -> firstName.equalsIgnoreCase(l.getFirstName()) || lastName.equalsIgnoreCase(l.getLastName())).toList();
     }
 
     @Override
     public List<Lecturer> findByAccess(String access) {
-        return List.of();
+        return lecturerRepository.findAll().stream().filter(l -> access.equalsIgnoreCase(l.getAccess())).toList();
     }
 
 

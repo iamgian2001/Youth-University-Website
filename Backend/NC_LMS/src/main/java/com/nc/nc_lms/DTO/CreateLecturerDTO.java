@@ -5,7 +5,7 @@ import lombok.Data;
 import java.time.LocalDate;
 
 @Data
-public class CreateStudentDTO {
+public class CreateLecturerDTO {
     private String nic;
     private String firstName;
     private String lastName;
@@ -16,6 +16,6 @@ public class CreateStudentDTO {
     private String city;
     private LocalDate dob;
     private String gender;
-    private String degreeType;
-    private String program;
+    private String department;
+    private String access;
 }

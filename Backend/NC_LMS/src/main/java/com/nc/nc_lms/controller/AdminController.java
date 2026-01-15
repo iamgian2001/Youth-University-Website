@@ -1,7 +1,10 @@
 package com.nc.nc_lms.controller;
 
+import com.nc.nc_lms.DTO.CreateStudentDTO;
+import com.nc.nc_lms.DTO.StudentResponseDTO;
 import com.nc.nc_lms.entity.Lecturer;
 import com.nc.nc_lms.entity.Student;
+import com.nc.nc_lms.mapper.StudentMapper;
 import com.nc.nc_lms.service.LecturerService;
 import com.nc.nc_lms.service.StudentService;
 import jakarta.validation.Valid;
@@ -26,8 +29,11 @@ public class AdminController {
     }
 
     @PostMapping("/save-student")
-    public ResponseEntity<?> createStudent(@Valid @RequestBody Student student) {
-        return ResponseEntity.ok(studentService.save(student));
+    public ResponseEntity<StudentResponseDTO> createStudent(@Valid @RequestBody CreateStudentDTO dto) {
+
+        Student student = StudentMapper.toEntity(dto);
+        Student saved = studentService.save(student);
+        return ResponseEntity.ok(StudentMapper.toResponseDto(saved));
 
     }
 
